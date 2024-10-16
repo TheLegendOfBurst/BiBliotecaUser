@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BiBliotecaUser.ORM1;
+namespace BiBliotecaUser.ORM;
 
 public partial class TbMembro
 {
@@ -13,7 +13,7 @@ public partial class TbMembro
 
     public string Telefone { get; set; } = null!;
 
-    public DateTime DataCadastro { get; set; }
+    public DateOnly DataCadastro { get; set; }
 
     public string TipoMembro { get; set; } = null!;
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BiBliotecaUser.ORM1;
+namespace BiBliotecaUser.ORM;
 
 public partial class TbUsuario
 {

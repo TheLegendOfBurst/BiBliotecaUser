@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace BiBliotecaUser.ORM1;
+namespace BiBliotecaUser.ORM;
 
 public partial class BibliotecaContext : DbContext
 {
@@ -27,7 +27,7 @@ public partial class BibliotecaContext : DbContext
 
     public virtual DbSet<TbReserva> TbReservas { get; set; }
 
-    public virtual DbSet<TbUsuario> TbUsuarios { get; set; }
+    public virtual DbSet<TbUsuario> TbUsuario { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -40,7 +40,9 @@ public partial class BibliotecaContext : DbContext
             entity.ToTable("Tb_Categorias");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Descricao).HasColumnType("text");
+            entity.Property(e => e.Descricao)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Nome)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -53,8 +55,6 @@ public partial class BibliotecaContext : DbContext
             entity.ToTable("Tb_Emprestimos");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.DataDevolucao).HasColumnType("datetime");
-            entity.Property(e => e.DataEmprestimo).HasColumnType("datetime");
 
             entity.HasOne(d => d.FkLivroNavigation).WithMany(p => p.TbEmprestimos)
                 .HasForeignKey(d => d.FkLivro)
@@ -93,7 +93,6 @@ public partial class BibliotecaContext : DbContext
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
-            entity.Property(e => e.AnoPubicacao).HasColumnType("datetime");
             entity.Property(e => e.Autor)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -112,7 +111,6 @@ public partial class BibliotecaContext : DbContext
             entity.ToTable("Tb_Membros");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.DataCadastro).HasColumnType("datetime");
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -132,7 +130,6 @@ public partial class BibliotecaContext : DbContext
             entity.ToTable("Tb_Reservas");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.DataReserva).HasColumnType("datetime");
 
             entity.HasOne(d => d.FkLivroNavigation).WithMany(p => p.TbReservas)
                 .HasForeignKey(d => d.FkLivro)

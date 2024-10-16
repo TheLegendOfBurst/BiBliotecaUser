@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BiBliotecaUser.ORM1;
+namespace BiBliotecaUser.ORM;
 
 public partial class TbEmprestimo
 {
     public int Id { get; set; }
 
-    public DateTime DataEmprestimo { get; set; }
+    public DateOnly DataEmprestimo { get; set; }
 
-    public DateTime DataDevolucao { get; set; }
+    public DateOnly DataDevolucao { get; set; }
 
     public int FkMembro { get; set; }
 

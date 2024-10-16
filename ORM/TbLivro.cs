@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BiBliotecaUser.ORM1;
+namespace BiBliotecaUser.ORM;
 
 public partial class TbLivro
 {
@@ -11,11 +11,11 @@ public partial class TbLivro
 
     public string Autor { get; set; } = null!;
 
-    public DateTime AnoPubicacao { get; set; }
+    public int AnoPublicacao { get; set; }
 
     public int FkCategoria { get; set; }
 
-    public byte Disponibilidade { get; set; }
+    public bool Disponibilidade { get; set; }
 
     public virtual TbCategoria FkCategoriaNavigation { get; set; } = null!;
 
