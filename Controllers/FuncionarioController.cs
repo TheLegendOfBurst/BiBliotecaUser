@@ -10,6 +10,7 @@ namespace BiBliotecaUser.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FuncionarioController : ControllerBase
     {
         private readonly FuncionarioR _funcionarioRepo;

@@ -141,3 +141,4 @@ C:\Users\Aluno Noite\Downloads\DaviG\BiBliotecaUser\obj\Debug\net8.0\refint\BiBl
 C:\Users\Aluno Noite\Downloads\DaviG\BiBliotecaUser\obj\Debug\net8.0\BiBliotecaUser.pdb
 C:\Users\Aluno Noite\Downloads\DaviG\BiBliotecaUser\obj\Debug\net8.0\BiBliotecaUser.genruntimeconfig.cache
 C:\Users\Aluno Noite\Downloads\DaviG\BiBliotecaUser\obj\Debug\net8.0\ref\BiBliotecaUser.dll
+C:\Users\Aluno Noite\Downloads\DaviG\BiBliotecaUser\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

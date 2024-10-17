@@ -10,6 +10,7 @@ namespace BiBliotecaUser.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CategoriaController : ControllerBase
     {
         private readonly CategoriaR _categoriaRepo;

@@ -10,6 +10,7 @@ namespace BiBliotecaUser.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class LivroController : ControllerBase
     {
         private readonly LivroR _livroRepo;
